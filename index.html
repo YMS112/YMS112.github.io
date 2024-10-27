@@ -68,7 +68,7 @@
             color: #58a6ff;
         }
         
-        /* 페이지 내용 */
+        /* 타이핑 애니메이션을 위한 스타일 */
         .header {
             height: 400px;
             position: relative;
@@ -78,15 +78,23 @@
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-        .header h2 {
             font-size: 2.8em;
             text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
-            animation: fadeIn 2s ease-in-out;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .typing {
+            display: inline-block;
+            border-right: 2px solid #58a6ff;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 3s steps(30, end), blink-caret 0.5s step-end infinite;
+        }
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: #58a6ff; }
         }
 
         /* 카드 스타일 */
@@ -162,9 +170,9 @@
     </div>
 </div>
 
-<!-- 제목 섹션 -->
+<!-- 타이핑 애니메이션이 들어간 제목 섹션 -->
 <div class="header">
-    <h2>미래의 혁신을 선도하는 AI 전문가</h2>
+    <span class="typing">미래의 혁신을 선도하는 AI 전문가</span>
 </div>
 
 <!-- 메인 컨텐츠 -->

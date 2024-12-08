@@ -1,205 +1,98 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minsoo Yang’s Portfolio</title>
-    <style>
-        /* 기본 스타일 설정 */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-            scroll-behavior: smooth;
-        }
-        body {
-            background-color: #161b22;
-            color: #c9d1d9;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 0;
-            flex-direction: column;
-        }
-
-        /* 배경 이미지 스타일 */
-        .background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('소프트웨어개발자1.png');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.1;
-            z-index: -1;
-        }
-
-        /* 네비게이션 바 스타일 */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 40px;
-            background-color: rgba(13, 17, 23, 0.8);
-            backdrop-filter: blur(5px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            z-index: 100;
-        }
-        .navbar h1 {
-            font-size: 1.8em;
-            color: #58a6ff;
-        }
-        .navbar a {
-            color: #c9d1d9;
-            margin-left: 15px;
-            text-decoration: none;
-            font-size: 1.1em;
-            transition: color 0.3s;
-        }
-        .navbar a:hover {
-            color: #58a6ff;
-        }
-
-        /* 타이핑 애니메이션을 위한 스타일 */
-        .header {
-            height: 400px;
-            position: relative;
-            text-align: center;
-            margin-top: 60px;
-            color: #f0f6fc;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.8em;
-            font-weight: bold; /* 텍스트 굵게 */
-            text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
-            background-color: rgba(0, 0, 0, 0.5); /* 제목 주위 배경 검정색 반투명 */
-            padding: 20px 30px;
-            border-radius: 8px;
-        }
-        .typing {
-            display: inline-block;
-            border-right: 3px solid #58a6ff;
-            white-space: nowrap;
-            overflow: hidden;
-            animation: typing 3s steps(30, end), blink-caret 0.5s step-end infinite;
-        }
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
-        }
-        @keyframes blink-caret {
-            from, to { border-color: transparent; }
-            50% { border-color: #58a6ff; }
-        }
-
-        /* 카드 스타일 */
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            max-width: 1000px;
-            margin: -100px auto 40px;
-            gap: 20px;
-            padding: 20px;
-        }
-        .card {
-            background-color: #1f2630;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4);
-            width: 100%;
-            max-width: 600px;
-            text-align: left;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.6);
-        }
-        .card h3 {
-            font-size: 1.7em;
-            color: #58a6ff;
-            margin-bottom: 10px;
-        }
-        .card p {
-            font-size: 1.1em;
-            line-height: 1.6;
-            color: #c9d1d9;
-        }
-
-        /* 연락처 */
-        .contact-info {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .contact-info a {
-            color: #58a6ff;
-            font-weight: bold;
-            text-decoration: none;
-        }
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-
-        /* 푸터 */
-        .footer {
-            text-align: center;
-            margin: 40px 0;
-            font-size: 0.9em;
-            color: #8b949e;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minsoo Yang's Portfolio</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f7f6;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    header {
+      background-color: #0066cc;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+    .container {
+      padding: 2rem;
+    }
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      color: #0066cc;
+    }
+    .card {
+      background-color: white;
+      padding: 1.5rem;
+      margin: 1rem 0;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      transition: transform 0.3s ease-in-out;
+    }
+    .card h3 {
+      margin: 0 0 1rem 0;
+      color: #333;
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    footer a {
+      color: #ffcc00;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <h1>Minsoo Yang's Portfolio</h1>
+  </header>
+  <div class="container">
+    <section>
+      <h2 class="section-title">About Me</h2>
+      <p>안녕하세요! 저는 서울사이버대학교 인공지능학과에 재학 중인 양민수입니다. 인공지능 기술이 다양한 산업에 미치는 영향에 깊은 관심을 가지고, 이를 활용해 실질적인 가치를 창출할 수 있는 전문가로 성장하고자 노력하고 있습니다.</p>
+    </section>
 
-<!-- 배경 이미지 -->
-<div class="background"></div>
+    <section>
+      <h2 class="section-title">my goal</h2>
+      <div class="card">
+        <h3>목표 1: AI 기술을 통해 미래의 혁신을 선도하는 전문가</h3>
+        <p>AI 기술을 활용하여 지속 가능한 미래를 선도하는 전문가가 되고자 합니다. 인공지능의 발전에 기여하며, 산업과 사회 전반에 혁신적인 변화를 일으킬 수 있는 역할을 하고 싶습니다.</p>
+      </div>
+      <div class="card">
+        <h3>목표 2: 인공지능 기술을 활용하여 사회와 산업에 긍정적인 변화를 이끌고, 사람들의 삶을 개선하는 혁신적인 솔루션을 개발한다.</h3>
+        <p>사람들의 삶에 실질적이고 긍정적인 영향을 미치는 AI 기반 솔루션을 개발하려 합니다. 특히 사회적 문제 해결을 위한 기술적 접근을 통해 더 나은 삶의 질을 제공하는 데에 관심이 많습니다.</p>
+      </div>
+    </section>
 
-<!-- 네비게이션 바 -->
-<div class="navbar">
-    <h1>Minsoo Yang’s Portfolio</h1>
-    <div>
-        <a href="#about">소개</a>
-        <a href="#goal">목표</a>
-        <a href="#contact">연락처</a>
-    </div>
-</div>
-
-<!-- 타이핑 애니메이션이 들어간 제목 섹션 -->
-<div class="header">
-    <span class="typing">미래의 혁신을 선도하는 AI 전문가</span>
-</div>
-
-<!-- 메인 컨텐츠 -->
-<div class="container">
-    <div class="card" id="about">
-        <h3>소개</h3>
-        <p>안녕하세요! 저는 서울사이버대학교 인공지능학과에 재학 중인 양민수입니다. 인공지능 기술이 다양한 산업에 미치는 영향에 깊은 관심을 가지고, 이를 활용해 실질적인 가치를 창출할 수 있는 전문가로 성장하고자 노력하고 있습니다.</p>
-    </div>
-    <div class="card" id="goal">
-        <h3>목표</h3>
-        <p>AI 기술을 통해 미래의 혁신을 선도하는 전문가가 되기를 목표로 합니다. 인공지능 기술을 통해 사회와 산업에 긍정적인 변화를 이끌어내고, 사람들의 삶을 개선하는 혁신적인 솔루션을 개발하는 데에 관심이 많습니다.</p>
-    </div>
-    <div class="card contact-info" id="contact">
-        <h3>연락처</h3>
-        <p><strong>이메일:</strong> <a href="mailto:yms20071914@gmail.com">yms20071914@gmail.com</a></p>
-        <p><strong>GitHub:</strong> <a href="https://github.com/YMS112" target="_blank">github.com/YMS112</a></p>
-    </div>
-</div>
-
-<!-- 푸터 -->
-<div class="footer">
-    <p>&copy; 2024 양민수의 포트폴리오</p>
-</div>
-
+    <section>
+      <h2 class="section-title">Skills</h2>
+      <ul>
+        <li>Machine Learning</li>
+        <li>Data Analysis</li>
+        <li>Python & JavaScript</li>
+        <li>TensorFlow, PyTorch</li>
+      </ul>
+    </section>
+  </div>
+  <footer>
+    <p>Contact me at <a href="mailto:yms20071914@gmail.com">yms20071914@gmail.com</a></p>
+  </footer>
 </body>
 </html>
+
